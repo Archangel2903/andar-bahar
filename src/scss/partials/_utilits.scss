@@ -186,6 +186,13 @@ form {
     }
   }
 
+  .form-title {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
   .form-text {
     margin: 0;
     font-size: 12px;
@@ -205,11 +212,24 @@ form {
 }
 
 .btn {
-  &-primary {
+  &-style {
+    background: linear-gradient(90.6deg, #F7EC9D 0%, #D3BE84 25%, #F7EC9D 50%, #E1B96F 75%, #F7EC9D 100%);
+    border: none !important;
+    border-radius: 0;
+    box-shadow: none !important;
+    color: var(--black);
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    outline: none !important;
 
+    &:hover {
+      color: #62000e;
+    }
   }
 }
 
+$select2-color: $main-first-color;
 .select2 {
   &-container {
     &--default {
@@ -217,7 +237,7 @@ form {
         &-selection--single {
           height: 40px;
           padding: 10px;
-          background: #201718;
+          background: $select2-color;
           border-color: var(--white);
           border-radius: 0;
 
@@ -280,11 +300,19 @@ form {
     }
   }
   &-dropdown {
-    background: #201718;
+    background: $select2-color;
   }
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: $font-weight-normal;
+}
+
+@include media-breakpoint-up(xl) {
+  form {
+    .form-title {
+      font-size: 24px;
+    }
+  }
 }
